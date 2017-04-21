@@ -46,4 +46,10 @@ app.controller("usersController", function($scope, $location){
 			$scope.list();
 		}
 	}
+//lookuplist
+	$scope.statesList = function(){
+		basel.database.runAsync("SELECT * FROM states", function(data){
+			$scope.stateitems = data;
+		});
+	}
 });
