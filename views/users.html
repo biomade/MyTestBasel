@@ -53,23 +53,25 @@
 					<h4 class="modal-title" id="myModalLabel">Users</h4>
 				</div>
 				<div class="modal-body">
-					<form class="basel-form">
+					<form name="formNewEdit" class="basel-form">
 						<div class="form-group">
 							<label>id</label>
 							<input type="text" class="form-control" ng-model="form.id">
 						</div>
 						<div class="form-group">
 							<label>name</label>
-							<input type="text" class="form-control" ng-model="form.name">
+							<input name="userName" type="text" class="form-control" ng-model="form.name" required="true">
+							<span style="color:red" ng-show="formNewEdit.userName.$error.required">Please provide a name</span>
 						</div>
 						<div class="form-group">
 							<label>email</label>
-							<input type="text" class="form-control" ng-model="form.email">
+							<input name="userEmail" type="email" class="form-control" ng-model="form.email">
+							<span style="color:red" ng-show="formNewEdit.userEmail.$error.email">Please provide a valid email</span>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>state</label>
 							<input type="text" class="form-control" ng-model="form.state">
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label>state</label>
 							<select id="StateSelector" ng-model="form.state" ng-init="statesList()">
